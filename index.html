@@ -1,0 +1,323 @@
+<html lang="es">
+<head prefix="og: http://ogp.me/ns# profile: http://ogp.me/ns/profile#">
+	<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+	<meta name=viewport content="width=device-width,initial-scale=1">
+	<meta http-equiv=X-UA-Compatible content="IE=edge">
+	<title>Grupo 6</title>
+	<style>		html,body
+		{	scroll-behavior: smooth;
+			font-family: "Ideal Sans SSm A", "Ideal Sans SSm B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background: #010A02;
+			color: #f8f8ff;
+			scrollbar-width: thin;
+			scrollbar-color: dark;
+		}	*::-webkit-scrollbar
+		{	width: 12px;
+		}	*::-webkit-scrollbar-track
+		{	background: #010A02;
+		}	*::-webkit-scrollbar-thumb
+		{	background-color: #f8f8ff;
+			border-radius: 20px;
+			border: 3px solid #010A02;
+		}	body
+		{	margin: 0 auto;
+			width: 80ch;
+			max-width: 90%;
+		}	h1
+		{	background: #010A02;
+			color: #f6ff00;
+			font-size: 3.25rem;
+			font-weight: 300;
+			position: sticky;
+			top: 0;
+			border-bottom: .25vh solid #010A02;
+			border-top: 2.25vh solid #010A02;
+			counter-reset: section;
+		}	h2
+		{	color: #dace21;
+			font-weight: 500;
+			font-size: 2.15rem;
+			word-spacing: .05rem;
+			line-height: calc(1ex / 0.35);
+			margin: calc(1ex / 0.5) 0 0 0;
+			counter-reset: subsection;
+		}	h2:before
+		{	counter-increment: section;
+			content: counter(section);
+			background: #dace21;
+			color: #010A02;
+			font-weight: 700;
+			border-radius: 2rem;
+			margin-right: 1.25rem;
+			height: 0;
+			width: 2.5rem;
+			padding-top: 0;
+			padding-bottom: 2.5rem;
+			display: inline-block;
+			text-align: center;
+			vertical-align: text-bottom;
+			font-size: 1.6rem;
+			line-height: 2.49rem;
+		}	h3:before
+		{	counter-increment: subsection;
+			padding-left: .4em;
+			margin-right: .3em;
+			content: counter(subsection, upper-alpha) ".";
+			font-weight: 700;
+			color: #f6ff00;
+		}	h3
+		{	font-weight: 500;
+		}	p,h3
+		{	max-width: 55ch;
+			font-size: 1.33rem;
+			text-align: justify;
+			-webkit-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
+			line-height: calc(1ex / 0.35);
+			margin: calc(1ex / 1) .25rem;
+		}	a,a:visited
+		{	width: 95%;
+			margin: 1rem auto;
+			padding: .5rem;
+			font-style: italic;
+			text-decoration: none;
+			cursor: pointer;
+			font-weight: 400;
+			color: #fff;
+			border: 2px solid #e9f10d;
+			transition: color ease-in .1s;
+			display: block;
+			font-size: 1.33rem;
+			max-width: 43ch;
+		}	a:after
+		{	float: right;
+			padding: 0 .5rem 0 .25rem;
+			content: "\0025b7";
+			color: #f6ff00;
+			margin-top: -.15rem;
+		}	a:hover
+		{	border-color: #f6ff00;
+			background: #f6ff00;
+			color:#010A02;
+		}	a:hover:after
+		{	color: #010A02;;
+		}	b
+		{	color: #dace21
+		}	abbr
+		{	cursor: help;
+			border-bottom: 2px dotted #f6ff00;
+			padding-bottom: 2px;
+		}	abbr:hover
+		{	border: none
+		}	abbr:hover::after
+		{	content: "\00A0\1F4D6\00A0\00A0" attr(data-title) "\00A0";
+			margin-left: 1rem;
+			background: #e9f10d;
+			color: #000;
+			font-weight: 700;
+			z-index: 1;
+			text-align: left;
+		}	a span
+		{    	font-style: normal;
+			font-weight:700;
+		}
+
+		#customAlert-overlay {
+    display: none;
+    opacity: 0.5;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background: #000;
+}
+
+#customConfirm-overlay {
+    display: none;
+    opacity: 0.5;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 95vw;
+    height: 100vh;
+    z-index: 10;
+    background: #000;
+}
+
+#customAlert {
+    background-color: #fff;
+}
+
+#customAlert button {
+    background-color: #bababa;
+    color: #5e5e5e;
+}
+
+#customAlert button:hover {
+    background-color: #666;
+    color: #e6e6e6;
+}
+
+#customConfirm {
+    background-color: #fff;
+}
+
+#customConfirm button.confirm {
+    margin-left: 10px;
+    background-color: #68bb74;
+    color: #204625;
+}
+
+#customConfirm button.confirm:hover {
+    background-color: #3f8d4b;
+    color: #dcefdf;
+}
+
+#customConfirm button.cancel {
+    background-color: #e2614b;
+    color: #f8d8d3;
+}
+
+#customConfirm button.cancel:hover {
+    background-color: #b0321c;
+    color: #f8d8d3;
+}
+
+#customAlert,
+#customConfirm {
+
+    border-radius: 5px;
+    width: 550px;
+    font-size: 20px;
+    display: none;
+    position: fixed;
+
+
+    max-width: 95vw;
+    max-height: 100vh;
+
+	z-index: 1000;
+    top: 5%;
+    left: 50%;
+    padding: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    margin-left: -275px;
+}
+
+@media (min-width: 321px) {
+    #customAlert,
+    #customConfirm {
+        top: 25%;
+    }
+}
+
+@media (max-width: 550px) {
+    #customAlert,
+    #customConfirm {
+        margin-left: -50vw;
+    }
+}
+
+#customAlert .header,
+#customConfirm .header {
+    background: #fff;
+    color: #232323;
+    text-align: center;
+    font-size: 0.75em;
+}
+
+#customAlert .body,
+#customConfirm .body {
+    padding: 10px;
+    color: #232323;
+    font-size: 1.2em;
+    background: #fff;
+    text-align: center;
+}
+
+#customAlert .footer,
+#customConfirm .footer {
+    background: #fff;
+    text-align: center;
+}
+
+#customAlert button,
+#customConfirm button {
+    width: 100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    word-wrap: break-word;
+    border: none;
+}
+u {color:yellow}
+
+	</style>
+</head>
+<body>
+<h1>Grupo 6</h1>
+<article>
+	<h2>Bienvenidos al SUP</h2>
+	<p>
+	Como sus TAs <b>¡Los felicitamos por haber superado el PREP!</b> Este va a ser <u><b>SU ESPACIO</b></u> a lo largo de los m&oacute;dulos</b>
+	vamos a estar haciendo <abbr data-title="En HENRY hay reglas de convivencia. En el SUP debe primar el RESPETO, no hay lugar para conductas agresivas o discriminatorias, contra cualquier persona o grupo">respetuosamente</abbr>,
+	muchas cosas, nos imaginamos que <abbr data-title="Esta intro no contienen spoilers, al principio no entend&iacute;mos mucho lo del SUP pero les aseguramos que les va ayudar a estudiar, conocerse, divertirse y trabajar juntos">deben tener curiosidad</abbr>, as&iacute; que <b>¡adelante!</b>
+	</p>
+	<h2>¿Qu&eacute; hago?</h2>
+	<a id="meet" target="_blank" rel="noopener noreferrer" href="https://discord.gg/bT3rxNGE"><span>INGRESAR AL SUP (Discord)</span></a>
+	<h2>¿D&oacute;nde Voy?</h2>
+	<h3>Calendario</h3>
+	<a target="_blank" rel="noopener noreferrer" href="http://calendario.soyhenry.com">calendario.soyhenry.com</a>
+	<h3>Zoom <i>(lecture)</i></h3>
+	<a target="_blank" rel="noopener noreferrer" href="https://us02web.zoom.us/j/88982606467">Zoom Lecture</a>
+	<h3>Links Importantes del cohorte</h3>
+	<a target="_blank" rel="noopener noreferrer" href="https://www.notion.so/Web-FT-33b-dc647d6adadb480d8eea0314c7260d0d">Links</a>
+	<h3>Students</h3>
+	<a target="_blank" rel="noopener noreferrer" href="https://www.students.soyhenry.com/bootcamp/modules/1">students.soyhenry.com</a>
+	<h3>Slack <b>#woman</b></h3>
+	<a target="_blank" rel="noopener noreferrer" href="https://soyhenry.slack.com/channels/henry_women">soyhenry.slack.com/channels/henry_women</a>
+	<h3>Slack <b>#rainbow</b></h3>
+	<a target="_blank" rel="noopener noreferrer" href="https://soyhenry.slack.com/channels/rainbow">soyhenry.slack.com/channels/rainbow</a>
+	<h3>FreeCodeCamp</h3>
+	<a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/">JavaScript y Algoritmos</a>
+	<h2>¿En qu&eacute; hablan?</h2>
+<p>
+	Ustedes forman parte de un
+	<abbr data-title="grupo de alumnos que cursan juntos Henry con un mismo instructor y fechas en común.">Cohorte</abbr>
+	el cual va a tener dirariamente una <abbr data-title="clase teórica">Lecture</abbr> donde le van a dar la <abbr data-title="tarea práctica diaria - es individual, pero se pueden ayudar entre ustedes">Homework</abbr>
+	para resolver, haciendo <abbr data-title="trabajo en equipos pequeños - aquí es donde se ayudan con la homework. Los equipos van cambiando.">Pair Programming / PP</abbr>
+    en <abbr data-title="plataforma para facilitar el pair programming.">Discord</abbr>
+    en una de las distintas <abbr data-title="equipo de trabajo para el pair programming. Es rotativo; no siempre van a ser los mismos.">Mesa de Discord</abbr>
+    Para luego pasar al <abbr data-title="Reunión al final del día con un grupo más grande y los TAs - Tercer oportunidad de fijar contenidos y despejar dudas. Los grupos se mantienen siempre igual, excepto por migración de alguien.">Standup / SUP</abbr>
+	junto a sus <abbr data-title="Teaching Assistant, los alumnos avanzados a cargo de su grupo de StandUp.">TA</abbr>s
+	Para al otro d&iacute;a van a revisarla en el <abbr data-title="repaso en vivo de la homework del día anterior con su instructor MAURO">Code Review</abbr> 
+	¿Todo claro?
+</p>
+	<h2>S.O.S.</h2>
+	<p>Estamos para ayudarlos no duden en contactanos. Saludos <b>Cristobal</b> y <b>Luciano</b>.</p>
+	<a target="_blank" rel="noopener noreferrer" href="https://soyhenry.slack.com/channels/webft33b_grupo06">Slack Grupo 6</a>
+	<br>
+	<br>
+</article>
+<script>
+var customKit={createDiv:function(t,e,o){var n=document.createElement("div");n.setAttribute(t,e),o?(o=document.getElementById(o)).appendChild(n):document.body.appendChild(n)},mergeObjects:function(t,e){var o={};for(var n in t)o[n]=t[n];for(var n in e)o[n]=e[n];return o}};function customAlert(t){this.defaultOptions={ok:"OK",title:"Alert!"},t&&(this.defaultOptions=customKit.mergeObjects(this.defaultOptions,t)),this.options=this.defaultOptions,null==document.getElementById("customAlert")&&(customKit.createDiv("id","customAlert-overlay"),customKit.createDiv("id","customAlert"),customKit.createDiv("class","header","customAlert"),customKit.createDiv("class","body","customAlert"),customKit.createDiv("class","footer","customAlert"),window.alert=window.Alert=function(t,e){e&&(window.customAlert.options=customKit.mergeObjects(window.customAlert.options,e)),window.customAlert.render(t)}),this.render=function(t){alertBox=document.getElementById("customAlert"),alertBox.getElementsByClassName("header")[0].innerHTML=this.options.title,alertBox.getElementsByClassName("body")[0].innerHTML=t,alertBox.getElementsByClassName("footer")[0].innerHTML='<button onclick="window.customAlert.ok()">'+this.options.ok+"</button>",document.getElementsByTagName("html")[0].style.overflow="hidden",document.getElementById("customAlert-overlay").style.display="block",alertBox.style.display="block"},this.ok=function(){document.getElementById("customAlert").style.display="none",document.getElementById("customAlert-overlay").style.display="none",document.getElementsByTagName("html")[0].style.overflow="auto",this.options=this.defaultOptions}}function customConfirm(t){this.defaultOptions={yes:"S&iacute;",no:"NO",title:"Confirm it:",return:!1},t&&(this.defaultOptions=customKit.mergeObjects(this.defaultOptions,t)),this.options=this.defaultOptions,null==document.getElementById("customConfirm")&&(customKit.createDiv("id","customConfirm-overlay"),customKit.createDiv("id","customConfirm"),customKit.createDiv("class","header","customConfirm"),customKit.createDiv("class","body","customConfirm"),customKit.createDiv("class","footer","customConfirm"),window.confirm=window.Confirm=function(t,e,o){o&&(window.customConfirm.options=customKit.mergeObjects(window.customConfirm.options,o)),window.customConfirm.render(t,e)}),this.callback=function(t){null!=t&&console.log(t)},this.render=function(t,e){this.callback=e,confirmBox=document.getElementById("customConfirm"),confirmBox.getElementsByClassName("header")[0].innerHTML=this.options.title,confirmBox.getElementsByClassName("body")[0].innerHTML=t,confirmBox.getElementsByClassName("footer")[0].innerHTML='<button class="cancel" onclick="window.customConfirm.cancel()">'   +this.options.no+'</button> <button class="confirm"  onclick="window.customConfirm.ok()">'+this.options.yes+"</button>",document.getElementsByTagName("html")[0].style.overflow="hidden",document.getElementById("customConfirm-overlay").style.display="block",confirmBox.style.display="block"},this.ok=function(){if(this.end(),this.options.return)return this.clear(),void this.callback(!0);this.clear(),this.callback()},this.cancel=function(){if(this.end(),this.options.return)return this.clear(),void this.callback(!1);this.clear()},this.end=function(){document.getElementById("customConfirm").style.display="none",document.getElementById("customConfirm-overlay").style.display="none",document.getElementsByTagName("html")[0].style.overflow="auto"},this.clear=function(){this.options=this.defaultOptions}}window.customAlert=new customAlert({title:""}),window.customConfirm=new customConfirm({title:""});
+document.getElementById("meet").addEventListener("click",function(e)
+{
+	e.preventDefault();
+	e.stopPropagation();
+
+	confirm('¿Es el d&iacute;a y hora correcto?', function (data) {
+        if (data)
+	    window.open(document.getElementById("meet").href, "_blank");
+        else
+            alert('Vuelva a hacer click el dia y hora correcto')
+    }, {return: true});
+});
+</script>
+</body>
+</html>
